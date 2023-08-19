@@ -1,13 +1,11 @@
-const { getSetting } = require("../configs/app.config");
 const ActiveDirectory = require("activedirectory2");
 const { StatusCodes: HttpStatus } = require("http-status-codes")
 
 async function getAdGroup(req,res,next){
     try {
-        const domainInfo = await getSetting()
-        const domainName = domainInfo.dataValues.domainAddress
-        const domainUser = domainInfo.dataValues.domainUser
-        const domainPass = domainInfo.dataValues.domainPass
+        const domainName = "Your Domain URL"
+        const domainUser = "Domain Admin Username"
+        const domainPass = "Domain Admin Password"
         baseDN = domainName.split(".");
         const ad = new ActiveDirectory({
             url: `ldap://${domainName}`,
