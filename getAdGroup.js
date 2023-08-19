@@ -19,7 +19,7 @@ async function getAdGroup(req,res,next){
                 res.status(HttpStatus.BAD_GATEWAY).json({
                     StatusCode: HttpStatus.BAD_GATEWAY,
                     errors: {
-                        message: "ارتباط با سرور دامین دارای مشکل می باشد"
+                        message: err
                     }
                 });
             }
@@ -31,7 +31,7 @@ async function getAdGroup(req,res,next){
                         res.status(HttpStatus.BAD_GATEWAY).json({
                             StatusCode: HttpStatus.BAD_GATEWAY,
                             errors: {
-                                message: "ارتباط با سرور دامین دارای مشکل می باشد"
+                                message: err
                             }
                         });
                     }
